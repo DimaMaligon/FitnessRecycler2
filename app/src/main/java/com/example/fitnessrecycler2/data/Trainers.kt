@@ -3,7 +3,6 @@ package com.example.fitnessrecycler2.data
 
 import com.google.gson.annotations.SerializedName
 import com.google.gson.annotations.Expose
-data class TrainersListResponse(val trainers: ArrayList<TrainerItem>)
 
 data class TrainerItem(
     @SerializedName("description")
