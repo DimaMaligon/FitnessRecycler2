@@ -1,4 +1,4 @@
-# Создание расписания для фитнесс клуба:
+# Создание расписания для фитнес клуба:
 
 Приложение отображает список занятий по дням недели. Уроки относящиеся к определенному 
 дню недели отделены заголовком. Карточка занятия отображает информацию о: времени начала и 
@@ -36,6 +36,6 @@
 быстро отображения данных.
 
 <p  align="center">
-<code><img width="35%" title="App" src="readme_images/json1.png"></code>
-<code><img width="35%" title="App" src="readme_images/json2.png"></code>
+<code><img width="55%" title="App" src="readme_images/json1.png"></code>
+<code><img width="55%" title="App" src="readme_images/json2.png"></code>
 </p>
