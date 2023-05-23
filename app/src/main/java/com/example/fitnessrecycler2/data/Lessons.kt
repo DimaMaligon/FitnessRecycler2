@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose
 
 import com.google.gson.annotations.SerializedName
 
-data class LessonsListResponse(val lessons: ArrayList<LessonItem>)
 
 data class LessonItem (
     @SerializedName("name")

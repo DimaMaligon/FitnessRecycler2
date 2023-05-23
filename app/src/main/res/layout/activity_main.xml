@@ -7,9 +7,13 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         style="@style/MyActionBarStyle"
         android:layout_width="411dp"
-        android:layout_height="44dp">
+        android:layout_height="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -27,7 +31,7 @@
                 android:id="@+id/titleActionbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Расписание"
+                android:text="@string/tab_scheadule"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/toolbar"
                 app:layout_constraintEnd_toEndOf="@+id/toolbar"
@@ -48,5 +52,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.508" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="401dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:text="@string/tab_lesson" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@android:drawable/ic_menu_edit"
+            android:text="@string/tab_orders" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@android:drawable/ic_menu_add"
+            android:text="@string/tab_add"
+            tools:layout_editor_absoluteX="274dp"
+            tools:layout_editor_absoluteY="2dp" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@android:drawable/ic_menu_send"
+            android:text="@string/tab_chat"
+            tools:layout_editor_absoluteX="274dp"
+            tools:layout_editor_absoluteY="2dp" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@android:drawable/ic_menu_sort_by_size"
+            android:text="@string/tab_else"
+            tools:layout_editor_absoluteX="274dp"
+            tools:layout_editor_absoluteY="2dp" />
+
+    </com.google.android.material.tabs.TabLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

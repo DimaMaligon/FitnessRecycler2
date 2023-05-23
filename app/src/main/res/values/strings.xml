@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">FitnessRecycler2</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="tab_lesson">Занятия</string>
+    <string name="tab_orders">Заявки</string>
+    <string name="tab_add">Добавить</string>
+    <string name="tab_chat">Чат</string>
+    <string name="tab_else">Еще</string>
+    <string name="tab_scheadule">Расписание</string>
 </resources>

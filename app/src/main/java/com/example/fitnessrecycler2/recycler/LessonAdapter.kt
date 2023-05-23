@@ -24,28 +24,13 @@ class LessonAdapter : RecyclerView.Adapter<LessonAdapter.LessonHolder>() {
         notifyDataSetChanged()
     }
 
-    inner class LessonHolder(item: View) : RecyclerView.ViewHolder(item) {
-        private val binding = LessonItemBinding.bind(item)
-        fun bind(lesson: LessonItem) = with(binding) {
-            startTime.text = lesson.startTime
-            name.text = lesson.name
-            endTime.text = lesson.endTime
-            coach.text = lesson.coachId
-            place.text = lesson.place
-            var nowLessonDate = lesson.date
-            if(nowLessonDate != dateTitle){
-                date.visibility = View.VISIBLE
-                dateTitle = nowLessonDate
-                date.text = changeFormatDate(nowLessonDate)
-            }
-            colorLabel.setBackgroundColor(Color.parseColor(lesson.color))
-        }
+    inner class LessonHolder(val binding: LessonItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LessonHolder {
-        val viewItem =
-            LayoutInflater.from(parent.context).inflate(R.layout.lesson_item, parent, false)
-        return LessonHolder(item = viewItem)
+        val binding = LessonItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return LessonHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -53,13 +38,36 @@ class LessonAdapter : RecyclerView.Adapter<LessonAdapter.LessonHolder>() {
     }
 
     override fun onBindViewHolder(holder: LessonHolder, position: Int) {
-        holder.bind(lessons[position])
+        with(holder) {
+            with(lessons[position]) {
+                binding.startTime.text = startTime
+                binding.name.text = name
+                binding.endTime.text = endTime
+                binding.coach.text = coachId
+                binding.place.text = place
+                var nowLessonDate = date
+                if (nowLessonDate != dateTitle) {
+                    binding.date.visibility = View.VISIBLE
+                    dateTitle = nowLessonDate
+                    binding.date.text = changeFormatDate(nowLessonDate)
+                }
+                binding.colorLabel.setBackgroundColor(Color.parseColor(color))
+            }
+        }
     }
 
-    fun changeFormatDate(date: String): String{
+    fun changeFormatDate(date: String): String {
         val formatterOriginal = DateTimeFormatter.ofPattern("yyyy-MM-dd")
         val locale = Locale("ru", "RU")
         val formatterTarget = DateTimeFormatter.ofPattern("EEEE, dd MMMM", locale)
         return LocalDate.parse(date, formatterOriginal).format(formatterTarget)
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return position
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
     }
 }
