@@ -7,4 +7,12 @@
     <string name="tab_chat">Чат</string>
     <string name="tab_else">Еще</string>
     <string name="tab_scheadule">Расписание</string>
+    <string name="gym">Тренажерный зал</string>
+    <string name="trainer">Тренерович Тренер</string>
+    <string name="end_time">11:12</string>
+    <string name="start_time">10:12</string>
+    <string name="name_lesson">Name Lesson</string>
+    <string name="date">10 ноября</string>
+    <string name="coach_icon">coach Icon</string>
+    <string name="location_icon">location Icon</string>
 </resources>

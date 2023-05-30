@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:paddingBottom="5.dp">
+    android:paddingBottom="5dp">
 
     <TextView
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:paddingBottom="5.dp"
-        android:text="10 ноября"
+        android:paddingBottom="5dp"
+        android:text="@string/date"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -29,7 +29,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date">
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        tools:ignore="TextSizeCheck">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -57,7 +58,8 @@
                 android:background="#24DC26"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="VisualLintBounds">
 
             </FrameLayout>
 
@@ -66,7 +68,8 @@
                 android:layout_width="156dp"
                 android:layout_height="19dp"
                 android:layout_marginStart="15dp"
-                android:text="Name Lesson"
+                android:text="@string/name_lesson"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline3"
                 app:layout_constraintStart_toEndOf="@+id/startTime"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -76,8 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="23dp"
-                android:text="10:12"
-                android:textSize="10sp"
+                android:text="@string/start_time"
+                android:textSize="11sp"
                 app:layout_constraintBottom_toTopOf="@+id/guideline3"
                 app:layout_constraintStart_toEndOf="@+id/colorLabel"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -87,8 +90,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="23dp"
-                android:text="11:12"
-                android:textSize="10sp"
+                android:text="@string/end_time"
+                android:textSize="11sp"
                 app:layout_constraintStart_toEndOf="@+id/colorLabel"
                 app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -97,24 +100,27 @@
                 android:layout_width="15dp"
                 android:layout_height="15dp"
                 android:layout_marginStart="12dp"
+                android:contentDescription="@string/coach_icon"
                 app:layout_constraintStart_toEndOf="@+id/endTime"
                 app:layout_constraintTop_toTopOf="@+id/guideline3"
-                app:srcCompat="@android:drawable/ic_menu_myplaces" />
+                app:srcCompat="@android:drawable/ic_menu_myplaces"
+                tools:ignore="ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/coach"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Тренерович Тренер"
-                android:textSize="10sp"
+                android:text="@string/trainer"
+                android:textSize="11sp"
                 app:layout_constraintStart_toEndOf="@+id/coachIcon"
                 app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
             <ImageView
                 android:id="@+id/locationIcon"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_marginStart="30dp"
+                android:contentDescription="@string/location_icon"
                 app:layout_constraintStart_toEndOf="@+id/coach"
                 app:layout_constraintTop_toTopOf="@+id/guideline3"
                 app:srcCompat="@android:drawable/ic_menu_mylocation" />
@@ -124,8 +130,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxWidth="150dp"
-                android:text="Тренажерный зал"
-                android:textSize="10sp"
+                android:text="@string/gym"
+                android:textSize="11sp"
                 app:layout_constraintStart_toEndOf="@+id/locationIcon"
                 app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
